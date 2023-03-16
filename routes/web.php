@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('notes.index');
 });
+
+Route::get('/notes/manage', function () {
+    return view('notes.manage');
+});
+
+Route::get('/notes/create', function () {
+    return view('notes.create');
+});
+
+Route::get('/notes', function () {
+    return view('notes.show');
+});
+
+Route::get('/notes/edit', function () {
+    return view('notes.edit');
+});

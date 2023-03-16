@@ -18,8 +18,9 @@
 </head>
 
 <body class="mb-48">
-    <nav class="flex justify-between items-center mb-4">
-        <a href="/"><img class="w-24" src="images/logo.png" alt="" class="logo" /></a>
+    <nav class="flex justify-between items-center mt-2 mb-2">
+        <a href="/" class="ml-4 hover:text-blue-500"><i class="fa-solid fa-home"></i> Home</a>
+
         <ul class="flex space-x-6 mr-6 text-lg">
             <li>
                 <a href="/register" class="hover:text-blue-500"><i class="fa-solid fa-user-plus"></i> Register</a>
@@ -37,10 +38,14 @@
 
     <footer
         class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-blue-500 text-white h-24 mt-24 opacity-90 md:justify-center">
-        <p class="ml-2">Made with &hearts; by <a class="hover:underline" href="https://github.com/bagashiz"
-                target="_blank" rel="noopener noreferrer">Bagas Hizbullah</a>
+        <a href="https://www.github.com/bagashiz/laranotes" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github text-2xl ml-2 hover:text-black"></i>
+        </a>
 
-            <a href="/create"
+        <p class="ml-2">Made with &hearts; by <a class="hover:underline" href="https://www.github.com/bagashiz"
+                target="_blank" rel="noopener noreferrer">bagashiz</a>
+
+            <a href="/notes/create"
                 class="absolute top-1/3 right-10 bg-white text-black py-2 px-5 hover:bg-black hover:text-white">Post
                 Notes</a>
     </footer>
