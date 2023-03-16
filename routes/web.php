@@ -32,3 +32,11 @@ Route::get('/notes', function () {
 Route::get('/notes/edit', function () {
     return view('notes.edit');
 });
+
+Route::get('/login', function () {
+    return view('users.login');
+});
+
+Route::get('/register', function () {
+    return view('users.register');
+});
