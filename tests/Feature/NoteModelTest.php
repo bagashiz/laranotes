@@ -1,18 +1,18 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use App\Models\Note;
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class UserTest extends TestCase
+class NoteModelTest extends TestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
-    // testUserHasManyNotes tests that a user has many notes
-    public function testUserHasManyNotes()
+    // testNoteBelongsToUser tests that a note belongs to a user
+    public function testNoteBelongsToUser()
     {
         $user = User::factory()->create();
         $note = Note::factory()->create([
