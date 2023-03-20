@@ -16,7 +16,7 @@
         @if (auth()->check())
             <div class="flex flex-col items-center justify-center h-64">
                 <p class="text-2xl font-bold text-gray-699 mb-2">No notes found!</p>
-                <p class="text-gray-500">Looks like you have not create any notes.</p>
+                <p class="text-gray-500">It looks like you haven't created any notes.</p>
             </div>
         @else
             <div class="flex flex-col items-center justify-center h-64">
