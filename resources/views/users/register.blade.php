@@ -9,19 +9,37 @@
             </header>
 
             <form method="POST" action="/users">
+                @csrf
                 <div class="mb-6">
                     <label for="username" class="inline-block text-lg mb-2">Username</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="username" />
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="username"
+                        value="{{ old('username') }}" />
+                    @error('username')
+                        <p class="text-red-500 text-xs mt-1">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
 
                 <div class="mb-6">
                     <label for="password" class="inline-block text-lg mb-2">Password</label>
                     <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password" />
+                    @error('password')
+                        <p class="text-red-500 text-xs mt-1">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
 
                 <div class="mb-6">
-                    <label for="password2" class="inline-block text-lg mb-2">Confirm Password</label>
-                    <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password2" />
+                    <label for="password_confirmation" class="inline-block text-lg mb-2">Confirm Password</label>
+                    <input type="password" class="border border-gray-200 rounded p-2 w-full"
+                        name="password_confirmation" />
+                    @error('password_confirmation')
+                        <p class="text-red-500 text-xs mt-1">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
 
                 <div class="mb-6">
@@ -33,7 +51,9 @@
                 <div class="mt-8">
                     <p>
                         Already have an account?
-                        <a href="/login" class="text-blue-500 hover:underline">Login</a>
+                        <a href="/login" class="text-blue-500 hover:underline">
+                            Log In
+                        </a>
                     </p>
                 </div>
             </form>
