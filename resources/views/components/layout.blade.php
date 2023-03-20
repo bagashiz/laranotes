@@ -22,13 +22,37 @@
         <a href="/" class="ml-4 hover:text-blue-500"><i class="fa-solid fa-home"></i> Home</a>
 
         <ul class="flex space-x-6 mr-6 text-lg">
-            <li>
-                <a href="/register" class="hover:text-blue-500"><i class="fa-solid fa-user-plus"></i> Register</a>
-            </li>
-            <li>
-                <a href="/login" class="hover:text-blue-500"><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    Login</a>
-            </li>
+            @auth
+                <li>
+                    <span class="font-bold uppercase">
+                        Welcome {{ auth()->user()->username }}
+                    </span>
+                </li>
+                <li>
+                    <a href="/notes/manage" class="hover:text-blue-500"><i class="fa-solid fa-gear"></i>
+                        Manage Notes
+                    </a>
+                </li>
+                <li>
+                    <form class="inline" method="POST" action="/logout">
+                        @csrf
+                        <button type="submit" class="hover:text-blue-500"><i class="fa-solid fa-door-closed"></i>
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            @else
+                <li>
+                    <a href="/register" class="hover:text-blue-500"><i class="fa-solid fa-user-plus"></i>
+                        Register
+                    </a>
+                </li>
+                <li>
+                    <a href="/login" class="hover:text-blue-500"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Login
+                    </a>
+                </li>
+            @endauth
         </ul>
     </nav>
 
@@ -46,8 +70,9 @@
                 target="_blank" rel="noopener noreferrer">bagashiz</a>
 
             <a href="/notes/create"
-                class="absolute top-1/3 right-10 bg-white text-black py-2 px-5 hover:bg-black hover:text-white">Post
-                Notes</a>
+                class="absolute top-1/3 right-10 bg-white text-black py-2 px-5 hover:bg-black hover:text-white">
+                Create Notes
+            </a>
     </footer>
 </body>
 
