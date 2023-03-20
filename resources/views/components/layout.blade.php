@@ -14,6 +14,8 @@
     <script src="https://kit.fontawesome.com/da28ab5279.js" crossorigin="anonymous"></script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/?plugins=forms"></script>
+    <!-- Alpine.js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>LaraNotes | Simple Notes Web App</title>
 </head>
 
@@ -74,6 +76,9 @@
                 Create Notes
             </a>
     </footer>
+
+    <x-flash-message />
+
 </body>
 
 </html>
