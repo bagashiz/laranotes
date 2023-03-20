@@ -22,4 +22,18 @@ class Note extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    // scopeFilter filters notes by tag and search query parameters
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['tag'] ?? false) {
+            $query->where('tags', 'like', '%' . $filters['tag'] . '%');
+        }
+
+        if ($filters['search'] ?? false) {
+            $query->where('title', 'like', '%' . $filters['search'] . '%')
+                ->orWhere('subtitle', 'like', '%' . $filters['search'] . '%')
+                ->orWhere('tags', 'like', '%' . $filters['search'] . '%');
+        }
+    }
 }
