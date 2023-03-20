@@ -52,8 +52,8 @@ class UserController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Invalid email or password'
-        ])->onlyInput('email');
+            'username' => 'Invalid username or password'
+        ])->onlyInput('username');
     }
 
     // logout log the user out
